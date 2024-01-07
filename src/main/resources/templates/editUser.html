@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.springframework.org/tags/form">
+<head>
+  <meta charset="UTF-8">
+  <title>Изменить</title>
+</head>
+<body>
+<h1 th:text="${headerMessage}"></h1>
+
+<form action="editUser" th:object="${user}" method="post" accept-charset="UTF-8">
+  <input type="hidden" th:field="*{id}"/>
+  <table border="2">
+    <tr>
+      <td><label for="firstName">Имя</label></td>
+      <td><input type="text" th:field="*{firstName}" id="firstName"/></td>
+    </tr>
+    <tr>
+      <td><label for="lastName">Фамилия</label></td>
+      <td><input type="text" th:field="*{lastName}" id="lastName"/></td>
+    </tr>
+    <tr>
+      <td><label for="userName">Email</label></td>
+      <td><input type="text" th:field="*{email}" id="userName"/></td>
+    </tr>
+    <tr>
+      <td><input type="submit" value="Обновить"/></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
